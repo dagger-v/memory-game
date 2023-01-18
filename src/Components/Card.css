@@ -1,0 +1,13 @@
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card img {
+  flex: 0 0 50px;
+  margin: 5px;
+}
+.card img {
+  cursor: pointer;
+}
