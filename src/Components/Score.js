@@ -1,9 +1,11 @@
+import "./Score.css";
+
 const Score = (props) => {
   return (
-    <div>
-      <p>{`Score: ${props.score}`}</p>
-      <p>{`High Score: ${props.highScore}`}</p>
-      <p>Max Score: 10</p>
+    <div className="score">
+      <button className="score-button">{`Score: ${props.score}`}</button>
+      <button className="high-score-button">{`High Score: ${props.highScore}`}</button>
+      <button className="max-score-button">Max Score: 8</button>
     </div>
   );
 };

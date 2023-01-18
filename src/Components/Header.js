@@ -1,11 +1,9 @@
-import logo from "../img/ac_card-logo.png";
+import "./Header.css";
 
 const Header = () => {
   return (
     <div>
-      <h1>
-        <img src={logo} alt="logo"></img> Animal Crossing Memory
-      </h1>
+      <h1>Animal Crossing Memory</h1>
     </div>
   );
 };

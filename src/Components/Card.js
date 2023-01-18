@@ -21,22 +21,33 @@ const Card = () => {
     // Update clicked images
     setClickedImages((current) => [...current, image]);
 
-    if (score >= 10) {
+    if (score >= 8) {
       reset();
     }
 
-    setHighScore(score + 1);
-    if (score > highScore) {
-      setHighScore(score);
-    }
-    if (highScore >= 10) {
-      setHighScore(10);
-    }
+    // Sets high score
+    updateHighScore();
 
     setImages(shuffleArray(Images));
 
     if (clickedImages.includes(image)) {
       reset();
+    }
+  };
+
+  const updateHighScore = () => {
+    const prevScore = score;
+
+    if (score === 0) {
+      setHighScore(prevScore);
+    }
+
+    if (score >= prevScore) {
+      setHighScore(prevScore + 1);
+    }
+
+    if (score === 8) {
+      setHighScore(8);
     }
   };
 
@@ -53,15 +64,17 @@ const Card = () => {
       <div>
         <Score score={score} highScore={highScore} />
       </div>
-      <div className="card">
-        {Images.map((img) => (
-          <img
-            key={img}
-            src={img}
-            alt={img}
-            onClick={() => incrementScore(img)}
-          />
-        ))}
+      <div className="container">
+        <div className="card">
+          {Images.map((img) => (
+            <img
+              key={img}
+              src={img}
+              alt={img}
+              onClick={() => incrementScore(img)}
+            />
+          ))}
+        </div>
       </div>
     </>
   );

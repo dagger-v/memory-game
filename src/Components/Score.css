@@ -1,0 +1,30 @@
+.score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  margin-left: 5px;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.score-button {
+  background-color: #4caf50; /* Green */
+}
+
+.high-score-button {
+  background-color: #4c4eaf;
+}
+
+.max-score-button {
+  background-color: #af4c91;
+}
