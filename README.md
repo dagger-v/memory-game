@@ -1,8 +1,8 @@
 # Rules
 
-- Click an image
-- Don't click the same image twice
-- If you do click the same image twice it's game over and your score resets
+- Click a card
+- Don't click the same card twice
+- If you do click the same card twice it's game over and your score resets
 - Keep clicking until your score reaches 8
 
 # CODE BREAK DOWN
