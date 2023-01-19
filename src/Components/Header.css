@@ -1,3 +1,5 @@
 h1 {
-  text-align: center;
+  padding: 1rem;
+  max-width: 570px;
+  margin: 0 auto;
 }

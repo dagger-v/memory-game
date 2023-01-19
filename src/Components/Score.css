@@ -1,7 +1,7 @@
 .score {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 1rem;
+  max-width: 665px;
+  margin: 0 auto;
 }
 
 button {
