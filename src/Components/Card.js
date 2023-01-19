@@ -13,44 +13,43 @@ const Card = () => {
   const [images, setImages] = useState(shuffleArray(Images));
   const [clickedImages, setClickedImages] = useState([]);
   const [score, setScore] = useState(0);
-  const [highScore, setHighScore] = useState(0);
+  const [highScore, setHighScore] = useState(score);
 
+  // Increment score upon clicking card image
   const incrementScore = (image) => {
     setScore(score + 1);
 
-    // Update clicked images
+    // Adds already clicked images to clickedImages array
     setClickedImages((current) => [...current, image]);
 
+    // Reset score back to 0 upon winning game
     if (score >= 8) {
       reset();
     }
 
-    // Sets high score
+    // Update high score
     updateHighScore();
 
+    // Randomly shuffles array of cards (images)
     setImages(shuffleArray(Images));
 
+    // Checks if certain card has already been clicked
     if (clickedImages.includes(image)) {
       reset();
     }
   };
 
+  // Updates the high score
   const updateHighScore = () => {
-    const prevScore = score;
-
-    if (score === 0) {
-      setHighScore(prevScore);
+    if (score >= highScore) {
+      setHighScore(score + 1);
     }
-
-    if (score >= prevScore) {
-      setHighScore(prevScore + 1);
-    }
-
     if (score === 8) {
       setHighScore(8);
     }
   };
 
+  // Resets scores and images array
   const reset = () => {
     // Reset score to 0
     setScore(0);
